@@ -10,15 +10,15 @@ RUN /bin/bash -c cd ~; cd /home ; mkdir -p exec
 
 ADD tomcat/apache/apache-tomcat/apache-tomcat-8.0.45.tar.gz /home/exec
 RUN /bin/bash -c cd /home/exec; mv /home/exec/apache-tomcat-8.* /home/exec/tomcat
-ADD tomcat/server.xml /home/exec/tomcat/conf
+#ADD tomcat/server.xml /home/exec/tomcat/conf
 ENV CATALINA_HOME=/home/exec/tomcat
 ENV TEST_ENV=2
 #CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
 
 
-#ADD *.war /home/exec/tomcat/webapps/swampup.war
+ADD war/*.war /home/exec/tomcat/webapps/swampup.war
 
-#CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
+CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
 
 
 

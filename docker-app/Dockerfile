@@ -16,7 +16,7 @@ ENV TEST_ENV=2
 #CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
 
 
-ADD war/*.war /home/exec/tomcat/webapps/
+#ADD war/*.war /home/exec/tomcat/webapps/
 
 CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
 

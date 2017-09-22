@@ -1,4 +1,4 @@
-FROM eranb-dockerv2-virtual.jfrog.io/ubuntu:latest
+FROM yodafrog.sas.jfrog.internal:5001/nginx:latest
 
 MAINTAINER Eran Blumenthal eranb@jfrog.com
 
@@ -15,10 +15,11 @@ ENV CATALINA_HOME=/home/exec/tomcat
 ENV TEST_ENV=2
 CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
 
+ADD dependencies/mooday/my-angular-app.tar.gz /usr/share/nginx/html/
 
 ADD dependencies/*.war /home/exec/tomcat/webapps/swampup.war
 
-CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
+#CMD /bin/bash -c cd /home/exec; /home/exec/tomcat/bin/catalina.sh run
 
 
 
